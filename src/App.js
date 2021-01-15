@@ -26,6 +26,7 @@ const App = (props) => {
         name={task.name}
         completed={task.completed}
         id={task.id}
+        filter={filter}
         key={task.id}
         isEditing={task.isEditing}
         updateStatus={() => updateTaskStatus(task.id)}
@@ -68,7 +69,7 @@ const App = (props) => {
   };
 
   // Observe the length of the array if changed,
-  // delete all characters in the input box 
+  // delete all characters in the input box
   useEffect(() => {
     setName("");
   }, [tasks.length]);
